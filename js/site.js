@@ -37,25 +37,24 @@ document.addEventListener('DOMContentLoaded', function () {
   const lightbox = document.getElementById('lightbox');
   const lightboxImage = document.querySelector('.lightbox-image');
   const lightboxClose = document.querySelector('.lightbox-close');
+  const collageImages = document.querySelectorAll('.collage-grid img');
 
-  if (lightbox && lightboxImage) {
-    // Use event delegation on the collage grid container
-    const collageGrid = document.querySelector('.collage-grid');
-    
-    if (collageGrid) {
-      // Open lightbox when any image in the grid is clicked
-      collageGrid.addEventListener('click', function(e) {
-        if (e.target && e.target.tagName === 'IMG') {
-          e.preventDefault();
-          e.stopPropagation();
-          const img = e.target;
-          lightboxImage.src = img.src;
-          lightboxImage.alt = img.alt || 'Vineyard image';
-          lightbox.classList.add('active');
-          document.body.style.overflow = 'hidden';
-        }
+  console.log('Lightbox elements:', { lightbox, lightboxImage, lightboxClose, collageImagesCount: collageImages.length });
+
+  if (lightbox && lightboxImage && collageImages.length > 0) {
+    // Open lightbox when image is clicked
+    collageImages.forEach((img, index) => {
+      img.style.cursor = 'pointer';
+      img.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        console.log('Image clicked:', this.src);
+        lightboxImage.src = this.src;
+        lightboxImage.alt = this.alt || 'Vineyard image';
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
       });
-    }
+    });
 
     // Close lightbox when close button is clicked
     if (lightboxClose) {
@@ -63,28 +62,30 @@ document.addEventListener('DOMContentLoaded', function () {
         e.preventDefault();
         e.stopPropagation();
         lightbox.classList.remove('active');
-        document.body.style.overflow = '';
+        document.body.style.overflow = ''; // Restore scrolling
       });
     }
 
-    // Close lightbox when clicking on the background (but not the image)
+    // Close lightbox when clicking outside the image (on the background)
     lightbox.addEventListener('click', function(e) {
       if (e.target === lightbox) {
         lightbox.classList.remove('active');
-        document.body.style.overflow = '';
+        document.body.style.overflow = ''; // Restore scrolling
       }
     });
     
     // Prevent closing when clicking on the image itself
-    lightboxImage.addEventListener('click', function(e) {
-      e.stopPropagation();
-    });
+    if (lightboxImage) {
+      lightboxImage.addEventListener('click', function(e) {
+        e.stopPropagation();
+      });
+    }
 
     // Close lightbox with Escape key
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape' && lightbox.classList.contains('active')) {
         lightbox.classList.remove('active');
-        document.body.style.overflow = '';
+        document.body.style.overflow = ''; // Restore scrolling
       }
     });
   }
