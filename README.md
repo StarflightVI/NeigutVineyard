@@ -1,4 +1,4 @@
-# Neigut Vineyards — Simple Static Website
+# Neigut Vineyard — Simple Static Website
 
 This is a minimal, elegant static website scaffold for a small winery or boutique vineyard. It includes three pages:
 
