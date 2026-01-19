@@ -92,6 +92,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Close lightbox when clicking outside the image (on the background)
     lightbox.addEventListener('click', function(e) {
+      // Close if clicking on the background overlay (not the image or close button)
       if (e.target === lightbox) {
         lightbox.classList.remove('active');
         document.body.style.overflow = ''; // Restore scrolling
