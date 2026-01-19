@@ -483,8 +483,8 @@ section.products-grid.products-grid-single{
   .hero h1{font-size:1.625rem}
   .hero h1::after{width:60px}
   .tagline{font-size:1.25rem}
-  .hero-image{width:82%;max-width:100%}
-  .hero-image img{max-height:492px}
+  .hero-image{width:94.3%;max-width:100%}
+  .hero-image img{max-height:566px}
   .header-inner{gap:1rem}
   .main-nav{
     display:none;
