@@ -162,8 +162,8 @@ body{
   margin-top:0 !important;
   margin-bottom:0 !important;
   padding-top:0 !important;
-  width:80%;
-  max-width:960px;
+  width:88%;
+  max-width:1056px;
   margin-left:auto;
   margin-right:auto;
   padding:0 1rem 0 1rem;
@@ -175,7 +175,7 @@ body{
 .hero-image img{
   width:100%;
   height:auto;
-  max-height:560px;
+  max-height:616px;
   object-fit:cover;
   border-radius:8px;
   border:2px solid rgba(139, 58, 58, 0.15);
@@ -288,14 +288,14 @@ body{
 
 .collage{
   margin-top:2.5rem;
-  padding-top:2rem;
-  border-top:1px solid rgba(139, 58, 58, 0.15);
+  padding-top:0;
+  border-top:none;
   position:relative;
 }
 .collage h3{
   font-family:'Playfair Display',serif;
   color:var(--brown);
-  margin-top:1rem;
+  margin-top:0;
   margin-bottom:1rem;
   font-size:1.5rem;
 }
@@ -390,15 +390,15 @@ section.products-grid.products-grid-single{
 }
 .wine-backstory{
   margin-top:3rem;
-  padding-top:2rem;
-  border-top:1px solid rgba(139, 58, 58, 0.15);
+  padding-top:0;
+  border-top:none;
   text-align:left;
 }
 .wine-backstory h3{
   font-family:'Playfair Display', serif;
   font-size:1.75rem;
   color:var(--brown);
-  margin:1rem 0 1rem;
+  margin:0 0 1rem;
   font-weight:600;
 }
 .wine-backstory p{
@@ -431,14 +431,14 @@ section.products-grid.products-grid-single{
 /* Responsive */
 @media (min-width:1200px){
   .hero{padding:0 2rem 0 2rem}
-  .hero-image{max-width:1120px}
-  .hero-image img{max-height:640px}
+  .hero-image{max-width:1232px}
+  .hero-image img{max-height:704px}
 }
 @media (max-width:900px){
   .collage-grid{grid-template-columns:repeat(2,1fr)}
   .products-grid:not(.products-grid-single){grid-template-columns:repeat(2,1fr)}
   .products-grid-single{grid-template-columns:1fr !important}
-  .hero-image img{max-height:480px}
+  .hero-image img{max-height:528px}
 }
 @media (max-width:640px){
   .hero{padding:0 1rem 0 1rem;overflow:hidden}
@@ -446,7 +446,7 @@ section.products-grid.products-grid-single{
   .hero h1::after{width:60px}
   .tagline{font-size:1.25rem}
   .hero-image{width:80%;max-width:100%}
-  .hero-image img{max-height:432px}
+  .hero-image img{max-height:475px}
   .header-inner{gap:1rem}
   .main-nav{
     display:none;
