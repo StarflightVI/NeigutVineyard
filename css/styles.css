@@ -200,7 +200,7 @@ body{
 
 .intro{
   padding-top:0;
-  padding-bottom:3rem;
+  padding-bottom:1rem;
   padding-left:1rem;
   padding-right:1rem;
   margin-top:0;
@@ -216,6 +216,29 @@ body{
   display:none;
 }
 .muted{color:var(--muted);font-style:normal}
+
+.page-break{
+  border:none;
+  border-top:2px solid rgba(139, 58, 58, 0.2);
+  margin:3rem auto;
+  max-width:var(--max-width);
+  width:calc(100% - 2rem);
+}
+
+.join-section{
+  text-align:center;
+  padding:2rem 1rem;
+}
+
+.join-wine-club-btn{
+  font-size:1.5rem;
+  padding:0.75rem 2rem;
+  display:inline-block;
+}
+
+.our-story-section{
+  padding-top:0.6rem;
+}
 
 .content{
   padding:2.5rem 1rem;

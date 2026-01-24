@@ -41,6 +41,10 @@ document.addEventListener('DOMContentLoaded', function () {
   if (!current || current === '') current = 'index.html';
 
   document.querySelectorAll('.main-nav a').forEach(a => {
+    // Don't hide buttons (accent-btn class) - they should always be visible
+    if (a.classList.contains('accent-btn')) {
+      return;
+    }
     const href = a.getAttribute('href') || '';
     const target = href.split('/').pop() || 'index.html';
     // Treat both '' and 'index.html' as home
